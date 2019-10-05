@@ -1,0 +1,139 @@
+﻿<Window x:Class="PC4U.UserAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC4U"
+        mc:Ignorable="d"
+        Title="UserAccount" Height="768" Width="1366" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="PC4U.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="nameLabel" Content="&lt;FirstName&gt; &lt;LastName&gt; (Client ID: XXXXX)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1366" Height="115" FontSize="48" Foreground="White" Padding="180,5,5,5">
+            <Label.Background>
+                <ImageBrush ImageSource="Resources/main banner1.png"/>
+            </Label.Background>
+        </Label>
+        <Button Style="{DynamicResource ArrowButtonStyle}"  Click="backArrow_Click" Content="" HorizontalAlignment="Left" Margin="12,121,0,0" VerticalAlignment="Top" Width="74" Height="74" Foreground="Black" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/back-arrow.png"/>
+            </Button.Background>
+        </Button>
+        <TabControl HorizontalAlignment="Left" Height="622" Margin="199,134,0,0" VerticalAlignment="Top" Width="1155">
+            <TabItem Header="Details">
+                <Grid Background="#FFFFFFFF">
+                    <Label Content="First Name" HorizontalAlignment="Left" Margin="142,26,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Last Name" HorizontalAlignment="Left" Margin="144,57,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Date of birth" HorizontalAlignment="Left" Margin="121,102,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Email address" HorizontalAlignment="Left" Margin="110,147,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Address and postcode" HorizontalAlignment="Left" Margin="20,179,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Username" HorizontalAlignment="Left" Margin="150,250,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+                    <Label Content="Password" HorizontalAlignment="Left" Margin="158,280,0,0" VerticalAlignment="Top" FontSize="24" Foreground="Black"/>
+
+                    <Label Content="Why do we need this?" HorizontalAlignment="Left" Margin="138,214,0,0" VerticalAlignment="Top" FontSize="12" Foreground="Black">
+                        <Label.ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" FontSize="14" Margin="0,0,0,5">Why do we need your address and postcode?</TextBlock>
+                                <TextBlock>
+                        We want this information in case you don't provide an email address,
+                         <LineBreak />
+                        or you wish to have your order delivered to you
+                                </TextBlock>
+                            </StackPanel>
+                        </Label.ToolTip>
+                    </Label>
+
+                    <Label Content="*" HorizontalAlignment="Left" Margin="530,18,0,0" VerticalAlignment="Top" FontSize="48" Foreground="Red"/>
+                    <Label Content="*" HorizontalAlignment="Left" Margin="530,270,0,0" VerticalAlignment="Top" FontSize="48" Foreground="Red"/>
+                    <Label Content="*" HorizontalAlignment="Left" Margin="530,170,0,0" VerticalAlignment="Top" FontSize="48" Foreground="Red"/>
+                    <Label Content="*" HorizontalAlignment="Left" Margin="530,139,0,0" VerticalAlignment="Top" FontSize="48" Foreground="Red"/>
+                    <Label Content="*" HorizontalAlignment="Left" Margin="530,48,0,0" VerticalAlignment="Top" FontSize="48" Foreground="Red"/>
+
+                    <TextBox x:Name="firstNameInput" HorizontalAlignment="Left" Height="23" Margin="300,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False"/>
+                    <TextBox x:Name="lastNameInput" HorizontalAlignment="Left" Height="23" Margin="300,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False"/>
+                    <Label Content="01/01/1999" x:Name="dobPicker" HorizontalAlignment="Left" Margin="294,109,0,0" VerticalAlignment="Top" Width="230" Height="31" FontSize="16"/>
+                    <TextBox x:Name="emailInput" HorizontalAlignment="Left" Height="23" Margin="300,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False"/>
+                    <TextBox x:Name="addressInput" HorizontalAlignment="Left" Height="23" Margin="300,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230" IsEnabled="False"/>
+
+                    <Label x:Name="usernameInput" HorizontalAlignment="Left" Height="37" Margin="300,256,0,0" VerticalAlignment="Top" Width="230" FontSize="16"/>
+                    <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Height="24" Margin="300,292,0,0" VerticalAlignment="Top" Width="230" IsEnabled="False"/>
+
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="94,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Check this box if you DO NOT allow any data you share with us (e.g. the information on this form, or your purchase history) to be shared with trusted third parties for the likes of market research and service improvements. (visit https://pc4u.co.uk/privacy for our privacy policy)" Width="437" Foreground="Black" FontSize="14"/>
+                    <CheckBox x:Name="dataSharingInput" Content="" HorizontalAlignment="Left" Margin="56,385,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+
+                    <Button x:Name="enableEdit" Style="{DynamicResource RoundedButtonStyle}" Click="enableEdit_Click" Content="Enable editing" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="150,450,0,0" Height="86" Width="305" FontSize="24" Cursor="Hand"/>
+                    <Button x:Name="save" Style="{DynamicResource RoundedButtonStyle}" Click="save_Click" Content="Save changes" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Margin="150,450,0,0" Height="86" Width="305" FontSize="24" Cursor="Hand" Visibility="Hidden"/>
+                    <Image HorizontalAlignment="Left" Height="292" Margin="708,151,0,0" VerticalAlignment="Top" Width="291" Source="Resources/no shadow.png" IsHitTestVisible="True" Stretch="Fill"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Current WIP orders">
+                <Grid Background="White">
+                    <ListView x:Name="current_repairs" HorizontalAlignment="Left" Height="523" Margin="21,55,0,0" VerticalAlignment="Top" Width="761" RenderTransformOrigin="0.5,0.5">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Issue ID" Width="75"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Issue}" Header="Issue" Width="680"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Current work-in-progress orders" HorizontalAlignment="Left" Margin="16,12,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Image HorizontalAlignment="Left" Height="292" Margin="821,151,0,0" VerticalAlignment="Top" Width="291" Source="Resources/working.png" IsHitTestVisible="True" Stretch="Fill"/>
+                    <Button x:Name="wip_see" Style="{DynamicResource RoundedButtonStyle}"  Content="See more" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Height="62" Width="138" FontSize="24" Cursor="Hand" Margin="898,499,0,0" Click="Wip_see_Click"/>
+                    <Label x:Name="no_wip_alert" Content="You have no Work-In-Progress (WIP) Orders" HorizontalAlignment="Left" Margin="180,77,0,0" VerticalAlignment="Top" FontSize="22"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Repair History">
+                <Grid Background="White">
+                    <ListView x:Name="repair_history" HorizontalAlignment="Left" Height="523" Margin="21,55,0,0" VerticalAlignment="Top" Width="761">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Issue ID" Width="75"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding Issue}" Header="Issue" Width="680"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Repair history" HorizontalAlignment="Left" Margin="16,12,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Image HorizontalAlignment="Left" Height="292" Margin="821,151,0,0" VerticalAlignment="Top" Width="291" Source="Resources/working.png" IsHitTestVisible="True" Stretch="Fill"/>
+                    <Button Click="repair_see" Style="{DynamicResource RoundedButtonStyle}"  Content="See more" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Height="62" Width="138" FontSize="24" Cursor="Hand" Margin="898,499,0,0"/>
+                    <Label x:Name="no_repair_history" Content="You have no previous repairs" HorizontalAlignment="Left" Margin="246,77,0,0" VerticalAlignment="Top" FontSize="22"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Purchase history">
+                <Grid Background="White">
+                    <ListView x:Name="purchase_table" HorizontalAlignment="Left" Height="523" Margin="21,55,0,0" VerticalAlignment="Top" Width="761">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding ID}" Header="Order ID" Width="75"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding ItemID}" Header="Item ID" Width="75"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding ItemName}" Header="Item name" Width="605"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Your purchase history" HorizontalAlignment="Left" Margin="16,12,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <Image HorizontalAlignment="Left" Height="292" Margin="821,151,0,0" VerticalAlignment="Top" Width="291" Source="Resources/512x512.png" IsHitTestVisible="True" Stretch="Fill"/>
+                    <Button Style="{DynamicResource RoundedButtonStyle}" Click="see_purchase" Content="See more" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Height="62" Width="138" FontSize="24" Cursor="Hand" Margin="898,499,0,0"/>
+                    <Label x:Name="no_purchase_history" Content="You have no previous purchases" HorizontalAlignment="Left" Margin="236,77,0,0" VerticalAlignment="Top" FontSize="22"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Request repair">
+                <Grid Background="White">
+                    <TextBlock HorizontalAlignment="Left" Margin="29, 24,0,0" TextWrapping="Wrap" Text="If your computer is still under PC4U repair warranty, you can get a repair free of charge. Otherwise, you will be charged with a fee for the repair. When finished filling in the following form, please hand in the PC along with your repair number and original order number for the computer. If you have said that you are under warranty on the form and we discover that you are not, you will be charged as normal for the repair! To continue, please click the big button below!" VerticalAlignment="Top" Width="1086" Height="105" FontSize="18"/>
+                    <Button Style="{DynamicResource RoundedButtonStyle}" Click="requestRepair_Click" Content="Request repair" HorizontalAlignment="Left" Margin="29,151,0,0" VerticalAlignment="Top" Foreground="White" Height="73" Width="260" FontSize="24" Cursor="Hand"/>
+                    <Image HorizontalAlignment="Left" Height="329" Margin="33, 243,0,0" VerticalAlignment="Top" Width="1071" Source="Resources/repair.png"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Delete account">
+                <Grid Background="White">
+                    <TextBlock HorizontalAlignment="Left" Margin="29, 24,0,0" TextWrapping="Wrap" Text="We're sorry to see you go! When you delete your account, all your personally identifiable information will be removed from our database, but your ID and username will remain as it is required to keep the structure of our system okay. To continue, please click the big button below!" VerticalAlignment="Top" Width="1086" Height="79" FontSize="18"/>
+                    <Button Style="{DynamicResource RoundedRedButtonStyle}" Click="deleteAccount_Click" Content="Delete account" HorizontalAlignment="Left" Margin="29,133,0,0" VerticalAlignment="Top" Foreground="White" Height="73" Width="260" FontSize="24" Cursor="Hand"/>
+                    <Image HorizontalAlignment="Left" Height="330" Margin="384,245,0,0" VerticalAlignment="Top" Width="379" Source="Resources/Untitled-1.png"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

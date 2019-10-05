@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        SizeToContent="WidthAndHeight"
+        xmlns:local="clr-namespace:PC4U_Admin"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="PC4U_Admin.ClientInfo"
+        mc:Ignorable="d"
+        Title="Client Info" Height="505" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="nameLabel" Content="FIRST NAME LAST NAME (Client ID: XXXXXX)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" FontSize="36" Width="892"/>
+
+        <Label Content="First Name" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="118,103,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="101"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="120,134,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="99"/>
+        <Label Content="Date of birth" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="102,179,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="116"/>
+        <Label Content="Email address" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="93,224,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="125"/>
+        <Label Content="Address and postcode" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="20,256,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="199"/>
+        <Label Content="Username" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="515,113,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="96"/>
+        <Label Content="Password" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="521,143,0,0" VerticalAlignment="Top" FontSize="16" Foreground="White" Width="90"/>
+
+        <TextBox x:Name="firstNameInput" HorizontalAlignment="Left" Height="23" Margin="246,109.313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <TextBox x:Name="lastNameInput" HorizontalAlignment="Left" Height="23" Margin="246,140.31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186"/>
+        <DatePicker x:Name="dobPicker" HorizontalAlignment="Left" Height="23" Margin="246,183.311,0,0" VerticalAlignment="Top" Width="186" FirstDayOfWeek="Monday" DisplayDateEnd="1900-01-01" DisplayDateStart="1900-01-01"/>
+        <TextBox x:Name="emailInput" HorizontalAlignment="Left" Height="23" Margin="246,229.311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" />
+        <TextBox x:Name="addressInput" HorizontalAlignment="Left" Height="23" Margin="246,261.311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" />
+
+        <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Height="23" Margin="639,117.987,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" IsEnabled="False"/>
+        <PasswordBox x:Name="passwordInput" HorizontalAlignment="Left" Height="23" Margin="639,147.985,0,0" VerticalAlignment="Top" Width="190"/>
+        <CheckBox x:Name="dataSharingInput" Content="" Height="23" HorizontalAlignment="Left" Margin="532,204,0,0" VerticalAlignment="Top"/>
+
+        <Button Click="save_Click" Content="Save edits and close" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="216,363,0,0" Height="48" Width="193" FontSize="20" Cursor="Hand"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="572,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Check this box if the client doesn't allow any data to be shared with us " Width="281" Foreground="White" FontSize="14" Height="43"/>
+        <Button Click="delete_Click" Content="Delete User" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="480,363,0,0" Height="48" Width="153" FontSize="20" Cursor="Hand"/>
+    </Grid>
+</Window> 

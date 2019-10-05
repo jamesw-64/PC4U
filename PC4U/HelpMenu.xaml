@@ -1,0 +1,57 @@
+﻿<Window x:Class="PC4U.HelpMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC4U"
+        mc:Ignorable="d"
+        Title="Help Menu" Height="768" Width="1366" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="PC4U.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+    <Grid>
+        
+        <Label x:Name="mainBanner" Content="Help Menu" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1366" Height="115" FontSize="48" Foreground="White">
+            <Label.Background>
+                <ImageBrush ImageSource="Resources/main banner1.png"/>
+            </Label.Background>
+        </Label>
+        <TabControl HorizontalAlignment="Left" Height="629" Margin="13,127,0,0" VerticalAlignment="Top" Width="1341">
+            <TabItem Header="Welcome!">
+                <Grid Background="#FFFFFF"/>
+            </TabItem>
+            <TabItem Header="Creating an account">
+                <ScrollViewer HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Background="White">
+                        <Label x:Name="mainBanner_Copy" Content="Creating an account" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Foreground="Black" Margin="25,10,0,10"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Creating an account is actually really easy. To do so, just click the button in the center on the main menu. Just fill in the information in the boxes that the * symbol beside them. We would prefer that you fill in all boxes, but we require certain information. Once you've filled in the informaion, just hit the &quot;Register for an account button&quot;." TextAlignment="Justify" VerticalAlignment="Top" FontSize="18" Margin="25,0,25,25"/>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/register.png" Margin="300,0,300,25"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Logging into your account">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="Ordering an item">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem Header="View order tracking">
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem x:Name="debug_info" Header="[DEBUGGING] This system's information" Visibility="Hidden">
+                <Grid Background="White">
+                    <Label Margin="0, 0, 0, 0" Content="Hello world" x:Name="SystemInfo" FontSize="16"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Click="backArrow_Click" Style="{DynamicResource ArrowButtonStyle}" Content="" HorizontalAlignment="Left" Margin="1261,24,0,0" VerticalAlignment="Top" Width="74" Height="74" Foreground="White" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/back-arrow.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

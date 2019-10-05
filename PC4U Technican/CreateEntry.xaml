@@ -1,0 +1,62 @@
+﻿<Window x:Class="PC4U_Technican.CreateEntry"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC4U_Technican"
+        mc:Ignorable="d"
+        Title="Create Store Entry" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="Title" Content="Create new store entry" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" FontSize="36" Width="790"/>
+        <extToolkit:WatermarkTextBox x:Name="ItemName" Watermark="Macbook Pro (2018)" Margin="167,84,486,302"/>
+        <Label Content="Item Name:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,75,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+
+        <Label Content="Type:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,118,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <ComboBox x:Name="type" HorizontalAlignment="Left" Margin="167,127,0,0" VerticalAlignment="Top" Width="141" Height="23">
+            <ComboBoxItem Content=""/>
+            <ComboBoxItem Content="Desktop PC"/>
+            <ComboBoxItem Content="Tablet PC"/>
+            <ComboBoxItem Content="2 in 1"/>
+            <ComboBoxItem Content="Laptop"/>
+        </ComboBox>
+        <extToolkit:WatermarkTextBox x:Name="Price" Watermark="£1249" Margin="167,168,486,218" Width="141"/>
+        <Label Content="Price:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,160,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="RAMSize" Watermark="8GB DDR4" Margin="166,210,485,176" />
+        <Label Content="RAM Size:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,202,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="Brand" Watermark="Apple" Margin="166,252,485,134" />
+        <Label Content="Brand:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,244,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="Model" Watermark="Macbook" Margin="166,294,485,92" />
+        <Label Content="Model:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,286,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="OS" Watermark="macOS Mojave" Margin="166,336,485,50" />
+        <Label Content="OS:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="37,328,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+
+        <extToolkit:WatermarkTextBox x:Name="Processor" Watermark="Intel® Core™ i5-7200U" Margin="576,83,75,303" />
+        <Label Content="Processor:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="447,75,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="Graphics" Watermark="Intel® Integrated" Margin="576,127,75,259" />
+        <Label Content="Graphics:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="447,119,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="HDD" Watermark="256GB" Margin="576,169,75,217" />
+        <Label Content="HDD Space:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="447,161,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <Label Content="Bluetooth?" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="447,203,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <Label Content="WiFi?" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="447,245,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <extToolkit:WatermarkTextBox x:Name="Details" Watermark="" Margin="439,295,75,50" SpellCheck.IsEnabled="True" AcceptsReturn="True"/>
+        <Label Content="Details:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="317,287,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="114"/>
+        <Button Click="commit" Content="Commit to database" HorizontalAlignment="Left" Margin="320,377,0,0" VerticalAlignment="Top" Width="130" Height="28"/>
+        <CheckBox x:Name="Bluetooth" HorizontalAlignment="Left" Margin="574,211,0,0" VerticalAlignment="Top" Height="15" Width="15">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <CheckBox x:Name="WiFi" HorizontalAlignment="Left" Margin="574,253,0,0" VerticalAlignment="Top" Height="15" Width="15">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+    </Grid>
+</Window>

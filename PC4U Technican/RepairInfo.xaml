@@ -1,0 +1,31 @@
+﻿<Window x:Class="PC4U_Technican.RepairInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC4U_Technican"
+        mc:Ignorable="d"
+        Title="RepairInfo" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="Title" Content="Repair ID: XXXXXX" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Foreground="White" FontSize="36" Width="790"/>
+
+        <Label Content="Client ID:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="17,120,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="107"/>
+        <TextBox x:Name="client_id" HorizontalAlignment="Left" Height="23" Margin="144,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67" IsReadOnly="True"/>
+        <Label x:Name="client_name" Content="FIRSTNAME LASTNAME" HorizontalAlignment="Left" Margin="225,125,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#7FFFFFFF" Width="531"/>
+
+        <Label Content="Issue:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="17,159,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="107"/>
+        <TextBox x:Name="issue" HorizontalAlignment="Left" Height="82" Margin="144,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="613" IsReadOnly="True"/>
+
+        <Label Content="Tracking:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="17,260,0,0" VerticalAlignment="Top" FontSize="20" Foreground="White" Width="107" />
+        <TextBox x:Name="tracking" HorizontalAlignment="Left" Height="82" Margin="144,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="613" AcceptsReturn="True" SpellCheck.IsEnabled="True"/>
+        
+        <Button Click="save" Content="Save and return" HorizontalAlignment="Left" Margin="255,369,0,0" VerticalAlignment="Top" Width="126" Height="34" FontSize="14"/>
+        <Button Click="finish" Content="Mark as done" HorizontalAlignment="Left" Margin="425,369,0,0" VerticalAlignment="Top" Width="126" Height="34" FontSize="14"/>
+    </Grid>
+</Window>

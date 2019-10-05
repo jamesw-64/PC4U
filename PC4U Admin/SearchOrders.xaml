@@ -1,0 +1,55 @@
+﻿<Window x:Class="PC4U_Admin.SearchOrders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PC4U_Admin"
+        mc:Ignorable="d"
+        Title="Search Orders" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" >
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF104898" Offset="1"/>
+            <GradientStop Color="#FF01AEFD" Offset="0.003"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="404" Margin="393,10,0,0" VerticalAlignment="Top" Width="5" Source="Resources/divider.png" Stretch="Fill"/>
+
+        <ListView x:Name="OrderTable" HorizontalAlignment="Left" Height="295" Margin="423,107,0,0" VerticalAlignment="Top" Width="348">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ClientID}" Header="Client ID" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemID}" Header="Item ID" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ItemName}" Header="Item Name" Width="215"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Orders" HorizontalAlignment="Left" Margin="423,10,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="White" FontSize="18" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="509,42,0,0" TextWrapping="Wrap" x:Name="orderSearchBox"  VerticalAlignment="Top" Width="175"/>
+        <Label Content="Client ID:" HorizontalAlignment="Left" Margin="423,37,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Button Click="searchOrder" Content="Search" HorizontalAlignment="Left" Margin="688,42,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
+        <Button Click="release_single" Content="Release order" HorizontalAlignment="Left" Margin="599,69,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+        <Button Content="Release all reserved items" Click="release" HorizontalAlignment="Left" Margin="599,15,0,0" VerticalAlignment="Top" Width="172" Height="23"/>
+        <Button Click="confirm" Content="Confirm order" HorizontalAlignment="Left" Margin="688,69,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
+        <Label Content="Available operations:" HorizontalAlignment="Left" Margin="423,64,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Button Click="show_all_orders" Content="Show all" HorizontalAlignment="Left" Margin="509,15,0,0" VerticalAlignment="Top" Width="86" Height="23"/>
+        <ListView x:Name="RepairTable" HorizontalAlignment="Left" Height="295" Margin="20,107,0,0" VerticalAlignment="Top" Width="348">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ClientID}" Header="Client ID" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding IssueID}" Header="Issue ID" Width="60"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Problem}" Header="Problem Description" Width="215"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Repairs" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="White" FontSize="18" Width="90"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="104,42,0,0" TextWrapping="Wrap" x:Name="repairSearchBox"  VerticalAlignment="Top" Width="175"/>
+        <Label Content="Client ID:" HorizontalAlignment="Left" Margin="18,37,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Button Click="searchRepair" Content="Search" HorizontalAlignment="Left" Margin="283,42,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
+        <Button Click="finish_repair" Content="Finish repair" HorizontalAlignment="Left" Margin="194,69,0,0" VerticalAlignment="Top" Width="85" Height="23"/>
+        <Button Click="selectRepair" Content="Open repair" HorizontalAlignment="Left" Margin="283,69,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
+        <Label Content="Available operations:" HorizontalAlignment="Left" Margin="18,64,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+        <Button Click="show_all_repairs" Content="Show all" HorizontalAlignment="Left" Margin="283,15,0,0" VerticalAlignment="Top" Width="83" Height="23"/>
+
+    </Grid>
+</Window>
